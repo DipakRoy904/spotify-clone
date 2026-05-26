@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1e2cd;
+    font-family: 'Varela Round', sans-serif;
+    /* Prevent scrolling so the bottom player stays in place */
+    height: 100vh;
+    overflow: hidden; 
+}
+
+nav {
+    font-family: 'Varela Round', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    padding: 0 20px;
+}
+
+nav ul li {
+    padding: 0 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+nav ul li.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Styling for the Home and About links */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #1db954; 
+}
+
+.container {
+    height: calc(100vh - 180px); /* Adjust for nav and bottom player */
+    background-color: black;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+    margin: 25px auto;
+    width: 80%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.songList {
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(180deg, rgba(11, 38, 22, 0.85) 0%, rgba(0, 0, 0, 0.98) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    overflow-y: auto; /* Allows scrolling through the long list of songs */
+}
+
+/* Custom Scrollbar for song list */
+.songList::-webkit-scrollbar {
+    width: 8px;
+}
+.songList::-webkit-scrollbar-track {
+    background: transparent;
+}
+.songList::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+
+.songItemContainer {
+    margin-top: 20px;
+}
+
+.songItem {
+    height: 50px;
+    display: flex;
+    background-color: white;
+    color: black;
+    margin: 10px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 34px;
+    padding: 0 15px;
+}
+
+.songItem img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.timestamp {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.timestamp i {
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.songBanner {
+    width: 100%;
+    background-image: url('https://musiccustodian.com/wp-content/uploads/2025/01/Spotify.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#myProgressBar {
+    width: 80vw;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.icons {
+    margin-top: 5px;
+}
+
+.icons i {
+    cursor: pointer;
+    margin: 0 15px;
+    transition: color 0.2s ease-in-out;
+}
+
+.icons i:hover {
+    color: #1db954;
+}
+
+.songInfo {
+    position: absolute;
+    left: 10vw;
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.songInfo img {
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+    margin-right: 10px;
+}
